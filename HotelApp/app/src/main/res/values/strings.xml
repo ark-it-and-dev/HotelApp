@@ -10,6 +10,8 @@
     <!-- Tela Login -->
 
     <!-- Tela do Hospede Logado -->
+    <string name="title_activity_home">Home</string>
+
     <!-- Opcoes Drawer -->
     <string name="drawerInicio">Início</string>
     <string name="drawerFinanceiro">Financeiro</string>

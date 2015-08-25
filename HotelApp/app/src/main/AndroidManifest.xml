@@ -15,6 +15,11 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="br.metodista.hotelapp.activities.Home"
+            android:label="@string/title_activity_home" >
+        </activity>
+
     </application>
 
 </manifest>
