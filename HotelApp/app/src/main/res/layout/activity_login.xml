@@ -33,7 +33,7 @@
         android:id="@+id/txtLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/usuario"
+        android:drawableLeft="@drawable/login_icone_usuario"
         android:background="@android:color/white"/>
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:password="true"
-        android:drawableLeft="@drawable/chave"
+        android:drawableLeft="@drawable/login_icone_senha"
         android:background="@android:color/white"/>
 
     <Button
@@ -57,14 +57,14 @@
         android:layout_height="wrap_content"
         android:text="@string/entrar"
         android:layout_marginTop="30dp"
-        android:background="@drawable/botao_background"/>
+        android:background="@drawable/login_botao_background"/>
 
     <Button
         android:id="@+id/btnCancelar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/voltar"
-        android:background="@drawable/botao_background"
+        android:background="@drawable/login_botao_background"
         android:layout_marginTop="10dp"/>
 
 </LinearLayout>
