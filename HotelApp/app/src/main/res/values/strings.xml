@@ -9,6 +9,19 @@
     <string name="voltar">Voltar</string>
     <!-- Tela Login -->
 
+    <!-- Tela do Hospede Logado -->
+    <!-- Opcoes Drawer -->
+    <string name="drawerInicio">Início</string>
+    <string name="drawerFinanceiro">Financeiro</string>
+    <string name="drawerServico">Serviço de Quarto</string>
+    <string name="drawerSair">Sair</string>
+    <string name="drawerRodape">Desenvolvido por Nozes</string>
+    <!-- Opcoes Drawer -->
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- Tela do Hospede Logado -->
+
     <!-- -->
     <!-- -->
     <!-- -->
