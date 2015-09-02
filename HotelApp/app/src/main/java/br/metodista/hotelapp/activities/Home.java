@@ -2,6 +2,8 @@ package br.metodista.hotelapp.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -18,6 +20,8 @@ import br.metodista.hotelapp.R;
 
 public class Home extends ActionBarActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+
+    private Intent irPara;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -53,20 +57,42 @@ public class Home extends ActionBarActivity
 
     public void onSectionAttached(int number) {
         switch (number) {
-            case 1:
-                mTitle = getString(R.string.drawerInicio);
+            case 1: //Opcao Inicio
+//                mTitle = getString(R.string.drawerInicio);
                 Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
                 break;
-            case 2:
-                mTitle = getString(R.string.drawerFinanceiro);
+
+            case 2: //Opcao Financeiro
+//                mTitle = getString(R.string.drawerFinanceiro);
                 Toast.makeText(this, "Financeiro", Toast.LENGTH_SHORT).show();
                 break;
-            case 3:
-                mTitle = getString(R.string.drawerServico);
+
+            case 3: //Opcao Servico
+//                mTitle = getString(R.string.drawerServico);
                 Toast.makeText(this, "Servico", Toast.LENGTH_SHORT).show();
                 break;
-            case 4:
-                Toast.makeText(this, "Saindo", Toast.LENGTH_SHORT).show();
+
+            case 4: //Opcao Sair
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setTitle("Confirmação de Logoff");
+                builder.setMessage("Deseja realmente realizar o logoff?");
+                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(Home.this, "Saindo", Toast.LENGTH_SHORT).show();
+                        irPara = new Intent(Home.this, Login.class);
+                        startActivity(irPara);
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                AlertDialog alerta = builder.create();
+                alerta.show();
+
                 break;
         }
     }
