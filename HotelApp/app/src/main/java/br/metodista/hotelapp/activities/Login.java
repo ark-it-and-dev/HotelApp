@@ -38,7 +38,8 @@ public class Login extends Activity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                irPara = new Intent(Login.this, Termos.class);
+                startActivity(irPara);
             }
         });
     }

@@ -2,30 +2,38 @@
     <string name="app_name">HotelApp</string>
 
     <!-- Tela Login -->
-    <string name="title_activity_login">Login</string>
-    <string name="login">Login:</string>
-    <string name="senha">Senha:</string>
-    <string name="entrar">Entrar</string>
-    <string name="voltar">Voltar</string>
+        <string name="title_activity_login">Login</string>
+        <string name="login">Login:</string>
+        <string name="senha">Senha:</string>
+        <string name="entrar">Entrar</string>
+        <string name="voltar">Voltar</string>
     <!-- Tela Login -->
 
+    <!-- Tela Termos -->
+        <string name="texto_termos">
+            bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla
+        </string>
+        <string name="texto_aceitar">Aceitar</string>
+        <string name="texto_nao_aceitar">Não Aceitar</string>
+    <!-- Tela Termos -->
+
     <!-- Tela do Hospede Logado -->
-    <string name="title_activity_home">Home</string>
+        <string name="title_activity_home">Home</string>
 
-    <!-- Opcoes Drawer -->
-    <string name="drawerInicio">Início</string>
-    <string name="drawerFinanceiro">Financeiro</string>
-    <string name="drawerServico">Serviço de Quarto</string>
-    <string name="drawerSair">Sair</string>
-    <string name="drawerRodape">Desenvolvido por Nozes</string>
-    <!-- Opcoes Drawer -->
+        <!-- Opcoes Drawer -->
+            <string name="drawerInicio">Início</string>
+            <string name="drawerFinanceiro">Financeiro</string>
+            <string name="drawerServico">Serviço de Quarto</string>
+            <string name="drawerSair">Sair</string>
+            <string name="drawerRodape">Desenvolvido por Nozes</string>
+        <!-- Opcoes Drawer -->
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+        <string name="navigation_drawer_open">Open navigation drawer</string>
+        <string name="navigation_drawer_close">Close navigation drawer</string>
+        <string name="title_activity_termos">Termos</string>
+
+        <string name="hello_world">Hello world!</string>
+        <string name="action_settings">Settings</string>
     <!-- Tela do Hospede Logado -->
 
-    <!-- -->
-    <!-- -->
-    <!-- -->
-    <!-- -->
 </resources>
