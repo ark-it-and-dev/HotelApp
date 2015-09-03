@@ -13,15 +13,18 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import br.metodista.hotelapp.R;
 
 
-public class Home extends ActionBarActivity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class Home extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     private Intent irPara;
+
+    private View view;
+    private FrameLayout frameLayout;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -50,7 +53,7 @@ public class Home extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        // update the main content by replacing fragments
+        // update the main content by replacing fragment
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.container, PlaceholderFragment.newInstance(position + 1)).commit();
     }
@@ -59,17 +62,34 @@ public class Home extends ActionBarActivity
         switch (number) {
             case 1: //Opcao Inicio
 //                mTitle = getString(R.string.drawerInicio);
-                Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
+
+                view = LayoutInflater.from(this).inflate(R.layout.fragment_inicio, null);
+                frameLayout = (FrameLayout) findViewById(R.id.container);
+
+                frameLayout.removeAllViews();
+                frameLayout.addView(view);
+                frameLayout.invalidate();
+
                 break;
 
             case 2: //Opcao Financeiro
-//                mTitle = getString(R.string.drawerFinanceiro);
-                Toast.makeText(this, "Financeiro", Toast.LENGTH_SHORT).show();
+                view = LayoutInflater.from(this).inflate(R.layout.fragment_financeiro, null);
+                frameLayout = (FrameLayout) findViewById(R.id.container);
+
+                frameLayout.removeAllViews();
+                frameLayout.addView(view);
+                frameLayout.invalidate();
+
                 break;
 
             case 3: //Opcao Servico
-//                mTitle = getString(R.string.drawerServico);
-                Toast.makeText(this, "Servico", Toast.LENGTH_SHORT).show();
+                view = LayoutInflater.from(this).inflate(R.layout.fragment_servico, null);
+                frameLayout = (FrameLayout) findViewById(R.id.container);
+
+                frameLayout.removeAllViews();
+                frameLayout.addView(view);
+                frameLayout.invalidate();
+
                 break;
 
             case 4: //Opcao Sair
