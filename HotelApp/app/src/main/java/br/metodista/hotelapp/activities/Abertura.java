@@ -57,8 +57,16 @@ public class Abertura extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_contactar:
+                irPara = new Intent(this, Contato.class);
+                startActivity(irPara);
+                break;
+
+            case R.id.action_settings:
+                irPara = new Intent(this, Contato.class);
+                startActivity(irPara);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
