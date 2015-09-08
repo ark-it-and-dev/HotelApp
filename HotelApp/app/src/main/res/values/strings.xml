@@ -3,25 +3,17 @@
 
     <!-- Tela Abertura -->
     <string name="title_activity_abertura">Abertura</string>
-    <string name="btnReservar">Reservar Quarto</string>
-    <string name="btnLogin">Login</string>
+    <string name="Abertura_btnReservar">Reservar Quarto</string>
+    <string name="Abertura_btnLogin">Login</string>
     <!-- Tela Abertura -->
 
     <!-- Tela Login -->
     <string name="title_activity_login">Login</string>
-    <string name="login">Login:</string>
-    <string name="senha">Senha:</string>
-    <string name="entrar">Entrar</string>
-    <string name="voltar">Voltar</string>
+    <string name="Login_txtLogin">Login:</string>
+    <string name="Login_txtSenha">Senha:</string>
+    <string name="Login_btnEntrar">Entrar</string>
+    <string name="Login_btnVoltar">Voltar</string>
     <!-- Tela Login -->
-
-    <!-- Tela Termos -->
-        <string name="texto_termos">
-            bla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla blabla bla bla bla bla bla
-        </string>
-    <string name="texto_aceitar">Aceitar</string>
-    <string name="texto_nao_aceitar">Não Aceitar</string>
-    <!-- Tela Termos -->
 
     <!-- Tela do Hospede Logado -->
     <string name="title_activity_home">Home</string>
@@ -36,18 +28,27 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_termos">Termos</string>
 
     <string name="title_activity_financeiro">Financeiro</string>
     <string name="title_activity_reservar_quarto">ReservarQuarto</string>
     <!-- Tela do Hospede Logado -->
 
-    <!-- Menu -->
+    <!-- Menu Default -->
     <string name="action_settings">Settings</string>
     <string name="action_contactar">Entrar em Contato</string>
     <string name="title_activity_contato">Contato</string>
+    <!-- Menu Default -->
 
-    <string name="hello_world">Hello world!</string>
-    <!-- Menu -->
+    <!-- Menu Contactar -->
+    <string name="action_ligar">Ligar</string>
+    <!-- Menu Contactar -->
+
+    <!-- Tela Contato -->
+    <string name="Contato_txtEmail">E-mail:</string>
+    <string name="Contato_txtMensagem">Mensagem:</string>
+    <string name="Contato_btnEnviar">Enviar</string>
+    <string name="Contato_txtLocalizacao">Localização</string>
+    <string name="Contato_txtEndereco">Rua dos Programadores</string>
+    <!-- Tela Contato -->
 
 </resources>
