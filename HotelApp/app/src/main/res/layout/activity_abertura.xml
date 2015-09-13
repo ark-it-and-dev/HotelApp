@@ -15,16 +15,18 @@
     <Button
         android:id="@+id/btnRealizarReserva"
         android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="@string/Abertura_btnReservar"
+        android:textSize="@dimen/abertura_login_tamanho_texto_botao"
         android:layout_marginTop="200dp"
         android:background="@drawable/botao_background"/>
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="250dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:text="@string/Abertura_btnLogin"
+        android:textSize="@dimen/abertura_login_tamanho_texto_botao"
         android:layout_marginTop="30dp"
         android:background="@drawable/botao_background"/>
 
