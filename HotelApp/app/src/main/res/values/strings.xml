@@ -31,8 +31,8 @@
 
     <!-- Tela Home -->
     <string name="home_texto_botao_pacotes">Pacotes</string>
+    <string name="home_texto_botao_hotel">Sobre</string>
     <string name="home_texto_botao_promocoes">Promoções</string>
-    <string name="home_texto_botao_localizacao">Localização</string>
     <string name="home_texto_botao_entretenimento">Guia Entretenimento</string>
     <string name="home_texto_botao_locomocao">Locomoção</string>
     <string name="home_texto_botao_mapa">Mapa</string>
