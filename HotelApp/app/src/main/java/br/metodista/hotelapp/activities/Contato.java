@@ -56,7 +56,7 @@ public class Contato extends AppCompatActivity {
         switch (id) {
             case R.id.action_ligar:
                 irPara = new Intent(Intent.ACTION_CALL);
-                String numero = "12345678";
+                String numero = "+5511959410310";
                 Uri telefoneHotel = Uri.parse("tel:" + numero);
                 irPara.setData(telefoneHotel);
                 startActivity(irPara);
