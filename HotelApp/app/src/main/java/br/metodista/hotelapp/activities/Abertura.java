@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import br.metodista.hotelapp.R;
 
@@ -45,7 +46,7 @@ public class Abertura extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_default, menu);
+        getMenuInflater().inflate(R.menu.menu_abertura, menu);
         return true;
     }
 
@@ -63,9 +64,8 @@ public class Abertura extends AppCompatActivity {
                 startActivity(irPara);
                 break;
 
-            case R.id.action_settings:
-                irPara = new Intent(this, Contato.class);
-                startActivity(irPara);
+            case R.id.action_localizacao:
+                Toast.makeText(this, "Função em desenvolvimento", Toast.LENGTH_SHORT).show();
                 break;
         }
 
