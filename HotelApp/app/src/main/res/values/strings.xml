@@ -23,20 +23,28 @@
     <string name="drawerFinanceiro">Financeiro</string>
     <string name="drawerServico">Serviço de Quarto</string>
     <string name="drawerSair">Sair</string>
-    <string name="drawerRodape">Desenvolvido por Nozes</string>
+    <string name="drawerRodape">Ark IT and DEV</string>
     <!-- Opcoes Drawer -->
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- Tela Home -->
+    <string name="home_texto_botao_pacotes">Pacotes</string>
+    <string name="home_texto_botao_promocoes">Promoções</string>
+    <string name="home_texto_botao_localizacao">Localização</string>
+    <string name="home_texto_botao_entretenimento">Guia Entretenimento</string>
+    <string name="home_texto_botao_locomocao">Locomoção</string>
+    <string name="home_texto_botao_mapa">Mapa</string>
+    <!-- Tela Home -->
+
     <string name="title_activity_financeiro">Financeiro</string>
-    <string name="title_activity_reservar_quarto">ReservarQuarto</string>
     <!-- Tela do Hospede Logado -->
 
     <!-- Menu Default -->
-    <string name="action_settings">Settings</string>
-    <string name="action_contactar">Entrar em Contato</string>
     <string name="title_activity_contato">Contato</string>
+    <string name="action_contactar">Entrar em Contato</string>
+    <string name="action_localizacao">Localização</string>
     <!-- Menu Default -->
 
     <!-- Menu Contactar -->
@@ -50,5 +58,34 @@
     <string name="Contato_txtLocalizacao">Localização</string>
     <string name="Contato_txtEndereco">Rua dos Programadores</string>
     <!-- Tela Contato -->
+
+    <!-- Tela Reservar -->
+    <string name="title_activity_reservar_quarto">Reservar Quarto</string>
+    <string name="Reservar_quarto_qtd_criancas">Qtd Criancas:</string>
+    <string name="Reservar_quarto_qtd_adultos">Qtd Adulto:</string>
+    <string name="Reservar_txt_disponilidade">Disponibilidade:</string>
+
+    <string-array name="Reservar_comboBoxAdulto">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>Mais</item>
+    </string-array>
+
+    <string-array name="Reservar_comboBoxCrianca">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>Mais</item>
+    </string-array>
+    <!-- Tela Reservar -->
 
 </resources>
