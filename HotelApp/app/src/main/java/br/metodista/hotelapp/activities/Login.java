@@ -27,7 +27,6 @@ public class Login extends AppCompatActivity {
 
         helper = new LoginHelper(this);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
-        btnCancelar = (Button) findViewById(R.id.btnCancelar);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
