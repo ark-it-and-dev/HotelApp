@@ -1,4 +1,4 @@
-package helper;
+package br.metodista.hotelapp.helper;
 
 import android.app.Activity;
 import android.widget.EditText;

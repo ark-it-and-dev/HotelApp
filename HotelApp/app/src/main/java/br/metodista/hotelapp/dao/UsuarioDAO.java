@@ -1,4 +1,4 @@
-package dao;
+package br.metodista.hotelapp.dao;
 
 import android.content.ContentValues;
 import android.content.Context;

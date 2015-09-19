@@ -1,4 +1,4 @@
-package model;
+package br.metodista.hotelapp.model;
 
 public class Usuario {
     private Long id;
