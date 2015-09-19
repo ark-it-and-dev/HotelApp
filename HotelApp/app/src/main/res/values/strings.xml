@@ -38,6 +38,11 @@
     <string name="home_texto_botao_mapa">Mapa</string>
     <!-- Tela Home -->
 
+    <!-- Tela Financeiro -->
+    <string name="financeiro_texto_valor_total">Valor Total: R$</string>
+    <string name="financeiro_texto_gastos">Disponi</string>
+    <!-- Tela Financeiro -->
+
     <string name="title_activity_financeiro">Financeiro</string>
     <!-- Tela do Hospede Logado -->
 
@@ -86,6 +91,70 @@
         <item>6</item>
         <item>Mais</item>
     </string-array>
+
+    <string name="action_settings">Settings</string>
     <!-- Tela Reservar -->
+
+    <!-- Home_Sobre -->
+    <string name="title_activity_home_sobre">Home_Sobre</string>
+    <string name="sobre_titulo">Sobre</string>
+    <string name="sobre1">
+    Situado no Centro Histórico de Porto Alegre, o Hotel Continental Business é uma oferta sob medida para quem busca acessibilidade, localização privilegiada para negócios e turismo, além de muito conforto.
+    </string>
+    <string name="sobre2">
+    O hotel oferece apartamentos de acordo com suas necessidades, com andares completamente reformulados, para a melhor experiência em hospedagem na capital gaúcha.
+    </string>
+    <string name="sobre3">
+    Inaugurado em 1999, no centro da cidade, o Hotel Continental Business se destaca pela qualidade de hospedagem e por oferecer um conjunto de serviços que tornam a estadia dos hóspedes uma experiência bastante agradável e produtiva.
+    </string>
+    <string name="sobre4">
+    Conta com mais de 30 anos de tradição hoteleira, inovando sempre, com o foco no compromisso de satisfazer as necessidades de seus clientes e fazer com que todos se sintam em casa.
+    </string>
+
+    <string name="sobre_titulo_servicos">Serviços</string>
+    <string name="sobre_servicos1">
+        - 126 apartamentos, com TV a cabo, ar condicionado e secador de cabelo;
+    </string>
+    <string name="sobre_servicos2">
+        - Salas para eventos e reuniões;
+    </string>
+    <string name="sobre_servicos3">
+        - Room service 24 horas;
+    </string>
+    <string name="sobre_servicos4">
+        - Business Center;
+    </string>
+    <string name="sobre_servicos5">
+        - Conexão Wireless Free em todo o hotel;
+    </string>
+    <string name="sobre_servicos6">
+        - Apartamentos adaptados para pessoas com necessidades especiais;
+    </string>
+    <string name="sobre_servicos7">
+        - Andar para pessoas alérgicas;
+    </string>
+    <string name="sobre_servicos8">
+        - Cofres;
+    </string>
+    <string name="sobre_servicos9">
+        - Telefone com discagem direta DDD e DDI;
+    </string>
+    <string name="sobre_servicos10">
+        - Serviço de lavanderia;
+    </string>
+    <string name="sobre_servicos11">
+        - Estacionamento com manobrista;
+    </string>
+
+    <string name="sobre_titulo_gastronomia">Gastronomia</string>
+    <string name="sobre_gastronomia1">
+        O Hotel Continental Business possui Coffee-Shop, Room Service 24horas com elaboração de pratos rápidos e lanches preparados por um chefe de cozinha. A localização central do Continental Business permite ao hóspede escolher entre as diversas opções de bares e restaurantes.
+    </string>
+
+    <string name="sobre_titulo_localizacao">Localização</string>
+    <string name="sobre_localizacao1">
+        Localizado no centro de São Bernardo do Campo, Rua Java, o Hotel Royals tem acesso privilegiado para turismo e negócios. É nesta região da cidade que estão concentradas as principais atividades de negócios, os centros culturais, os prédios históricos e lindas praças arborizadas.
+    </string>
+    <!-- Home_Sobre -->
 
 </resources>
