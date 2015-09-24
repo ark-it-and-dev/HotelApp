@@ -7,8 +7,7 @@
     tools:context=".Home$PlaceholderFragment"
     android:background="@drawable/home_background">
 
-    <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <GridLayout
         android:id="@+id/GridLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -18,7 +17,7 @@
         tools:context=".GridXMLActivity" >
 
         <Button
-            android:id="@+id/btnHotel"
+            android:id="@+id/btnSobre"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="40dp"
             android:layout_width="100dp"
