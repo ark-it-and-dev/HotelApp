@@ -53,7 +53,7 @@ public class Home extends ActionBarActivity implements NavigationDrawerFragment.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_home_standby);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -139,7 +139,7 @@ public class Home extends ActionBarActivity implements NavigationDrawerFragment.
             case 3: //Opcao Servico
                 Toast.makeText(this, "Servico", Toast.LENGTH_SHORT).show();
                 view = LayoutInflater.from(this).inflate(R.layout.fragment_servico, null);
-                getMenuInflater().inflate(R.menu.menu_financeiro, menu);
+                getMenuInflater().inflate(R.menu.menu_default, menu);
 
                 frameLayout.addView(view);
 
