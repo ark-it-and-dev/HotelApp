@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import br.metodista.hotelapp.R;
-import helper.LoginHelper;
-import model.Usuario;
+import br.metodista.hotelapp.helper.LoginHelper;
+import br.metodista.hotelapp.model.Usuario;
 
 public class Login extends AppCompatActivity {
 
