@@ -10,12 +10,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import br.metodista.hotelapp.R;
+import br.metodista.hotelapp.StandBy.ReservarQuarto;
 
 public class Abertura extends AppCompatActivity {
 
     private Intent irPara;
 
-    private Button btnReservar;
+//    private Button btnReservar;
     private Button btnLogin;
 
     @Override
@@ -23,16 +24,16 @@ public class Abertura extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abertura);
 
-        btnReservar = (Button) findViewById(R.id.btnRealizarReserva);
+//        btnReservar = (Button) findViewById(R.id.btnRealizarReserva);
         btnLogin = (Button) findViewById(R.id.btnLogin);
 
-        btnReservar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                irPara = new Intent(Abertura.this, ReservarQuarto.class);
-                startActivity(irPara);
-            }
-        });
+//        btnReservar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                irPara = new Intent(Abertura.this, ReservarQuarto.class);
+//                startActivity(irPara);
+//            }
+//        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +47,8 @@ public class Abertura extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_abertura, menu);
+//        getMenuInflater().inflate(R.menu.menu_abertura, menu);
+        getMenuInflater().inflate(R.menu.menu_default, menu);
         return true;
     }
 
@@ -64,9 +66,9 @@ public class Abertura extends AppCompatActivity {
                 startActivity(irPara);
                 break;
 
-            case R.id.action_localizacao:
-                Toast.makeText(this, "Função em desenvolvimento", Toast.LENGTH_SHORT).show();
-                break;
+//            case R.id.action_localizacao:
+//                Toast.makeText(this, "Função em desenvolvimento", Toast.LENGTH_SHORT).show();
+//                break;
         }
 
         return super.onOptionsItemSelected(item);
