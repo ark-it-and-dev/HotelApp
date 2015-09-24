@@ -1,4 +1,4 @@
-package br.metodista.hotelapp.activities;
+package br.metodista.hotelapp.StandBy;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,12 +11,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import br.metodista.hotelapp.R;
+import br.metodista.hotelapp.activities.Abertura;
+import br.metodista.hotelapp.activities.Contato;
 
 
 public class Home extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
@@ -25,6 +30,15 @@ public class Home extends ActionBarActivity implements NavigationDrawerFragment.
 
     private View view;
     private FrameLayout frameLayout;
+
+    private Button btnSobre;
+    private Button btnGuiaEntretenimento;
+    private Button btnPacotes;
+    private Button btnPromocoes;
+    private Button btnLocomocao;
+    private Button btnMapa;
+
+    private Menu menu;
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -49,6 +63,47 @@ public class Home extends ActionBarActivity implements NavigationDrawerFragment.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+//        btnSobre = (Button) findViewById(R.id.btnSobre);
+//        btnSobre.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                irPara = new Intent(Home.this, Home_Sobre.class);
+//                startActivity(irPara);
+//            }
+//        });
+//        btnGuiaEntretenimento = (Button) findViewById(R.id.btnGuiaEntretenimento);
+//        btnPacotes = (Button) findViewById(R.id.btnPacotes);
+//        btnPromocoes = (Button) findViewById(R.id.btnPromocoes);
+//        btnLocomocao = (Button) findViewById(R.id.btnLocomocao);
+//        btnMapa = (Button) findViewById(R.id.btnMapa);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        this.menu = menu;
+        getMenuInflater().inflate(R.menu.menu_default, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        switch (id) {
+            case R.id.action_contactar:
+                irPara = new Intent(this, Contato.class);
+                startActivity(irPara);
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -59,36 +114,34 @@ public class Home extends ActionBarActivity implements NavigationDrawerFragment.
     }
 
     public void onSectionAttached(int number) {
+        frameLayout = (FrameLayout) findViewById(R.id.container);
+
+        frameLayout.removeAllViews();
+        frameLayout.invalidate();
+
         switch (number) {
             case 1: //Opcao Inicio
-//                mTitle = getString(R.string.drawerInicio);
-
+                Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show();
                 view = LayoutInflater.from(this).inflate(R.layout.fragment_inicio, null);
-                frameLayout = (FrameLayout) findViewById(R.id.container);
 
-                frameLayout.removeAllViews();
                 frameLayout.addView(view);
-                frameLayout.invalidate();
 
                 break;
 
             case 2: //Opcao Financeiro
+                Toast.makeText(this, "Financeiro", Toast.LENGTH_SHORT).show();
                 view = LayoutInflater.from(this).inflate(R.layout.fragment_financeiro, null);
-                frameLayout = (FrameLayout) findViewById(R.id.container);
 
-                frameLayout.removeAllViews();
                 frameLayout.addView(view);
-                frameLayout.invalidate();
 
                 break;
 
             case 3: //Opcao Servico
+                Toast.makeText(this, "Servico", Toast.LENGTH_SHORT).show();
                 view = LayoutInflater.from(this).inflate(R.layout.fragment_servico, null);
-                frameLayout = (FrameLayout) findViewById(R.id.container);
+                getMenuInflater().inflate(R.menu.menu_financeiro, menu);
 
-                frameLayout.removeAllViews();
                 frameLayout.addView(view);
-                frameLayout.invalidate();
 
                 break;
 
@@ -100,7 +153,7 @@ public class Home extends ActionBarActivity implements NavigationDrawerFragment.
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(Home.this, "Saindo", Toast.LENGTH_SHORT).show();
-                        irPara = new Intent(Home.this, Login.class);
+                        irPara = new Intent(Home.this, Abertura.class);
                         startActivity(irPara);
                     }
                 });

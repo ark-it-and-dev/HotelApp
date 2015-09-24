@@ -1,4 +1,4 @@
-package br.metodista.hotelapp.activities;
+package br.metodista.hotelapp.StandBy;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
