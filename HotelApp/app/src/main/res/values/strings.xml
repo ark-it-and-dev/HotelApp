@@ -80,6 +80,12 @@
     <!-- Tela Financeiro -->
 
     <string name="title_activity_financeiro">Financeiro</string>
+
+    <string name="servicos_texto_qtd_total">Quantidade Total de Itens</string>
+    <string name="servicos_texto_botao">Ver Itens Adicionados</string>
+    <string name="servicos_carrinho_texto_botao">Confirmar Pedido</string>
+
+    <string name="title_activity_carrinho">Carrinho</string>
     <!-- Tela do Hospede Logado -->
 
     <!-- Menu Default -->
