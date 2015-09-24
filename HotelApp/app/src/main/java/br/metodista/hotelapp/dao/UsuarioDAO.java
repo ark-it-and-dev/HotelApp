@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import model.Usuario;
+import br.metodista.hotelapp.model.Usuario;
 
 /**
  * Created by Gustavo Assalin on 04/09/2015.

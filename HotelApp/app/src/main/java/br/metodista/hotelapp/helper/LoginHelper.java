@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.widget.EditText;
 
 import br.metodista.hotelapp.R;
-import model.Usuario;
+import br.metodista.hotelapp.model.Usuario;
 
 /**
  * Created by Gustavo Assalin on 04/09/2015.
