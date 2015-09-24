@@ -3,8 +3,11 @@ package br.metodista.hotelapp.activities;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
 import android.widget.ExpandableListView.OnGroupClickListener;
@@ -23,6 +26,8 @@ public class Servicos extends AppCompatActivity {
     private List<String> listGroup;
     private HashMap<String, List<String>> listChild;
 
+    private Intent irPara;
+    private Button btnCarrinho;
 //    private ImageView imgAdd;
 
     @Override
@@ -32,6 +37,14 @@ public class Servicos extends AppCompatActivity {
 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.expList);
+        btnCarrinho = (Button) findViewById(R.id.btnListaCarrinho);
+        btnCarrinho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                irPara = new Intent(Servicos.this, Carrinho.class);
+                startActivity(irPara);
+            }
+        });
 //        imgAdd = (ImageView) findViewById(R.id.imgAdd);
 
         // preparing list data
