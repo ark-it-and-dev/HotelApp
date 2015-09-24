@@ -54,7 +54,8 @@ public class Home extends AppCompatActivity {
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                irPara = new Intent(Home.this, Checkout.class);
+                startActivity(irPara);
             }
         });
 

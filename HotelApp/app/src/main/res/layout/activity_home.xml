@@ -8,45 +8,35 @@
     android:background="@drawable/home_background"
     android:gravity="center">
 
-    <GridLayout
-        android:id="@+id/GridLayoutHome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:rowCount="2"
-        android:orientation="horizontal"
-        tools:context=".GridXMLActivity" >
-
         <Button
             android:id="@+id/btnFinanceiro"
-            android:layout_height="120dp"
-            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
             android:text="@string/home_botao_financeiro"
-            android:background="@drawable/botao_background"
-            android:layout_marginBottom="60dp"
-            android:layout_marginRight="60dp"/>
+            android:background="@drawable/botao_background"/>
 
         <Button
             android:id="@+id/btnServicos"
-            android:layout_height="120dp"
-            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
             android:text="@string/home_botao_servicos"
+            android:layout_marginTop="35dp"
             android:background="@drawable/botao_background"/>
 
         <Button
             android:id="@+id/btnCheckout"
-            android:layout_height="120dp"
-            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
             android:text="@string/home_botao_checkout"
+            android:layout_marginTop="35dp"
             android:background="@drawable/botao_background"/>
 
         <Button
             android:id="@+id/btnSair"
-            android:layout_height="120dp"
-            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_width="300dp"
             android:text="@string/home_botao_sair"
+            android:layout_marginTop="130dp"
             android:background="@drawable/botao_background"/>
-
-    </GridLayout>
 
 </LinearLayout>
