@@ -206,6 +206,11 @@
     <!-- Tela Servico -->
     <string name="btnAddPedido">ADD</string>
     <string name="title_activity_servivos">Servicos</string>
+    <string name="title_activity_checkout">Checkout</string>
     <!-- Tela Servico -->
+
+    <!-- Tela Checkout -->
+    <string name="checkout_texto_finalizar_checkout">Finalizar Checkout</string>
+    <!-- Tela Checkout -->
     
 </resources>
