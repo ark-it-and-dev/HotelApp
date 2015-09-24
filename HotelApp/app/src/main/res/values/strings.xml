@@ -36,11 +36,47 @@
     <string name="home_texto_botao_entretenimento">Guia Entretenimento</string>
     <string name="home_texto_botao_locomocao">Locomoção</string>
     <string name="home_texto_botao_mapa">Mapa</string>
+
+    <string name="home_botao_financeiro">Financeiro</string>
+    <string name="home_botao_servicos">Serviços</string>
+    <string name="home_botao_checkout">Checkout</string>
+    <string name="home_botao_sair">Sair</string>
     <!-- Tela Home -->
 
     <!-- Tela Financeiro -->
-    <string name="financeiro_texto_valor_total">Valor Total: R$</string>
-    <string name="financeiro_texto_gastos">Disponi</string>
+    <string name="financeiro_cabecalho">Despesas</string>
+    <string name="financeiro_texto_valor_total">Valor Total:</string>
+    <string name="financeiro_texto_observacao_valor_total">*Valor total sem soma da diária.</string>
+
+    <string name="financeiro_titulo_estadia">Estadia</string>
+    <string name="financeiro_estadia_responsavel">Responsável:</string>
+    <string name="financeiro_estadia_nome_responsavel">João Paulo</string>
+    <string name="financeiro_estadia_qtdpessoas">Qtd de Pessoas:</string>
+    <string name="financeiro_estadia_pessoas">2 Adultos e 3 crianças</string>
+    <string name="financeiro_estadia_pacote">Pacote:</string>
+    <string name="financeiro_estadia_nomepacote">Luxo</string>
+    <string name="financeiro_estadia_valor_diaria">Valor Diário:</string>
+    <string name="financeiro_estadia_diaria">R$ 400,00</string>
+    <string name="financeiro_estadia_periodo_contratado">Período Contratado:</string>
+    <string name="financeiro_estadia_tempo_periodo_contratado">7 dias e 6 noites</string>
+
+    <string name="financeiro_titulo_servico_de_quarto">Serviço de Quarto</string>
+    <string name="financeiro_servicoquarto_titulo_pedido1">Ribeye 380g</string>
+    <string name="financeiro_servicoquarto_preco_pedido1">R$ 250,00</string>
+    <string name="financeiro_servicoquarto_titulo_pedido2">Trop Kobe Beef-Baby beef c batata soufflés</string>
+    <string name="financeiro_servicoquarto_preco_pedido2">R$ 240,00</string>
+    <string name="financeiro_servicoquarto_titulo_pedido3">The Burguer Lab Star</string>
+    <string name="financeiro_servicoquarto_preco_pedido3">R$ 200,00</string>
+    <string name="financeiro_servicoquarto_titulo_pedido4">Lagosta ao Thermidor</string>
+    <string name="financeiro_servicoquarto_preco_pedido4">R$ 190,00</string>
+    <string name="financeiro_servicoquarto_titulo_pedido5">Camarão a Provençal</string>
+    <string name="financeiro_servicoquarto_preco_pedido5">R$ 150,00</string>
+
+    <string name="financeiro_titulo_demais">Demais Despesas</string>
+    <string name="financeiro_demais_titulo_gasto1">Spa</string>
+    <string name="financeiro_demais_preco_gasto1">R$ 150,00</string>
+    <string name="financeiro_demais_titulo_gasto2">Massagem Oriental</string>
+    <string name="financeiro_demais_preco_gasto2">R$ 35,00</string>
     <!-- Tela Financeiro -->
 
     <string name="title_activity_financeiro">Financeiro</string>
@@ -55,6 +91,10 @@
     <!-- Menu Contactar -->
     <string name="action_ligar">Ligar</string>
     <!-- Menu Contactar -->
+
+    <!-- Menu Financeiro -->
+    <string name="action_pedido">Conferir Pedido</string>
+    <!-- Menu Financeiro -->
 
     <!-- Tela Contato -->
     <string name="Contato_txtEmail">E-mail:</string>
@@ -157,4 +197,9 @@
     </string>
     <!-- Home_Sobre -->
 
+    <!-- Tela Servico -->
+    <string name="btnAddPedido">ADD</string>
+    <string name="title_activity_servivos">Servicos</string>
+    <!-- Tela Servico -->
+    
 </resources>
