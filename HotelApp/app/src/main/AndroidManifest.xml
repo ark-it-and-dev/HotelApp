@@ -62,31 +62,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="br.metodista.hotelapp.activities.Home" />
         </activity>
-
-        <!--
-    <activity
-        android:name=".StandBy.Home"
-        android:label="@string/title_activity_home" >
-
-    </activity>
-    <activity
-        android:name=".StandBy.ReservarQuarto"
-        android:label="@string/title_activity_reservar_quarto" >
-        android:parentActivityName=".activities.Abertura" >
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".activities.Abertura" />
-    </activity>
-    <activity
-        android:name=".StandBy.Home_Sobre"
-        android:label="@string/title_activity_home_sobre"
-        android:parentActivityName=".StandBy.Home" >
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".StandBy.Home" />
-
-    </activity>
-        -->
         <activity
             android:name=".activities.Checkout"
             android:label="@string/title_activity_checkout"
