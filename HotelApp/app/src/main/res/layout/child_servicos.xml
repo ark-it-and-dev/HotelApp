@@ -3,14 +3,6 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imgAdd"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
-        android:src="@drawable/icone_adicionar"
-        android:layout_marginRight="10dp"
-        android:layout_gravity="center"/>
-
     <TextView
         android:id="@+id/childTextNome"
         android:layout_width="wrap_content"
