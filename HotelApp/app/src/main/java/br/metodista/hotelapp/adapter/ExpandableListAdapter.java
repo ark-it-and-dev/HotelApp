@@ -19,7 +19,7 @@ import br.metodista.hotelapp.R;
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
     private Context _context;
     private List<String> listGroup; // header titles
-    // child data in format of header title, child title
+    // child_servicos data in format of header title, child_servicos title
     private HashMap<String, List<String>> listChild;
 
     public ExpandableListAdapter(Context context, List<String> listGroup,
@@ -47,7 +47,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.child, null);
+            convertView = infalInflater.inflate(R.layout.child_servicos, null);
         }
 
         TextView txtChildNome = (TextView) convertView.findViewById(R.id.childTextNome);
@@ -84,7 +84,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) this._context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = infalInflater.inflate(R.layout.group, null);
+            convertView = infalInflater.inflate(R.layout.group_servicos, null);
         }
 
         TextView lblListHeader = (TextView) convertView

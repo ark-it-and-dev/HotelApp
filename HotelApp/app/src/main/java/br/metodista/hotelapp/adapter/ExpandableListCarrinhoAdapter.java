@@ -19,7 +19,7 @@ import br.metodista.hotelapp.R;
 public class ExpandableListCarrinhoAdapter extends BaseExpandableListAdapter {
     private Context _context;
     private List<String> listGroup; // header titles
-    // child data in format of header title, child title
+    // child_servicos_servicos data in format of header title, child_servicos title
     private HashMap<String, List<String>> listChild;
 
     public ExpandableListCarrinhoAdapter(Context context, List<String> listGroup, HashMap<String, List<String>> listChild) {
