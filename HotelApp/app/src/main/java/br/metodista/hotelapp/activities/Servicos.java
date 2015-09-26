@@ -6,6 +6,8 @@ import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ExpandableListView;
@@ -27,7 +29,7 @@ public class Servicos extends AppCompatActivity {
     private HashMap<String, List<String>> listChild;
 
     private Intent irPara;
-    private Button btnCarrinho;
+//    private Button btnCarrinho;
 //    private ImageView imgAdd;
 
     @Override
@@ -37,14 +39,14 @@ public class Servicos extends AppCompatActivity {
 
         // get the listview
         expListView = (ExpandableListView) findViewById(R.id.expList);
-        btnCarrinho = (Button) findViewById(R.id.btnListaCarrinho);
-        btnCarrinho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                irPara = new Intent(Servicos.this, Carrinho.class);
-                startActivity(irPara);
-            }
-        });
+//        btnCarrinho = (Button) findViewById(R.id.btnListaCarrinho);
+//        btnCarrinho.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                irPara = new Intent(Servicos.this, Carrinho.class);
+//                startActivity(irPara);
+//            }
+//        });
 //        imgAdd = (ImageView) findViewById(R.id.imgAdd);
 
         // preparing list data
@@ -90,7 +92,7 @@ public class Servicos extends AppCompatActivity {
             }
         });
 
-        // Listview on child click listener
+        // Listview on child_servicos click listener
         expListView.setOnChildClickListener(new OnChildClickListener() {
 
             @Override
@@ -137,5 +139,30 @@ public class Servicos extends AppCompatActivity {
 
         listChild.put(listGroup.get(0), listChildPratos);
         listChild.put(listGroup.get(1), listChildBebidas);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_default, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.action_contactar:
+                irPara = new Intent(Servicos.this, Contato.class);
+                startActivity(irPara);
+
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

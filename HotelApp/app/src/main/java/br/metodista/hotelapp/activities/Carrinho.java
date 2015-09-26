@@ -77,7 +77,7 @@ public class Carrinho extends AppCompatActivity {
             }
         });
 
-        // Listview on child click listener
+        // Listview on child_servicos click listener
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 
             @Override
