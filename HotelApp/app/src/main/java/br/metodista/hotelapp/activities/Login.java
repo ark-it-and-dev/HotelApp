@@ -32,76 +32,83 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        helper = new LoginHelper(this);
+
+        usuario = dao.buscar;
+        if(usuario != null) {
+            helper.setUsuarioDoLogin(usuario.getLogin(), usuario.getSenha());
+        }
+
         builder = new AlertDialog.Builder(Login.this);
 
-        helper = new LoginHelper(this);
         btnEntrar = (Button) findViewById(R.id.btnEntrar);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                usuario = helper.getUsuarioDoLogin();
-
-                if(usuario.getLogin().equals("") || usuario.getSenha().equals("")) {
-                    builder.setTitle("");
-                    builder.setMessage("Está faltando informação!");
-
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    });
-
-                    alerta = builder.create();
-                    alerta.show();
+                if(helper.getUsuarioDoLogin().equals(usuario)) {
+                    irPara = new Intent(Login.this, Home.class);
+                    startActivity(irPara);
                 } else {
-                    builder.setTitle("");
-                    builder.setMessage("Deseja manter os dados para conexão automática?");
+                    if(usuario.getLogin().equals("") || usuario.getSenha().equals("")) {
+                        builder.setTitle("");
+                        builder.setMessage("Está faltando informação!");
 
-                    builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (dao.usuarioNaTabela()) {
-                                builder.setTitle("");
-                                builder.setMessage("Continuando esta ação, login automático do antigo usuário não será mais permitido.\nDeseja continuar?");
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {}
+                        });
 
-                                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dao.inserir(usuario);
+                        alerta = builder.create();
+                        alerta.show();
+                    } else {
+                        builder.setTitle("");
+                        builder.setMessage("Deseja manter os dados para conexão automática?");
 
-                                        irPara = new Intent(Login.this, Home.class);
-                                        startActivity(irPara);
-                                    }
-                                });
+                        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (dao.usuarioNaTabela()) {
+                                    builder.setTitle("");
+                                    builder.setMessage("Continuando esta ação, login automático do antigo usuário não será mais permitido.\nDeseja continuar?");
 
-                                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        irPara = new Intent(Login.this, Home.class);
-                                        startActivity(irPara);
-                                    }
-                                });
-                                alerta = builder.create();
-                                alerta.show();
-                            } else {
-                                dao.inserir(usuario);
+                                    builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dao.inserir(usuario);
+
+                                            irPara = new Intent(Login.this, Home.class);
+                                            startActivity(irPara);
+                                        }
+                                    });
+
+                                    builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            irPara = new Intent(Login.this, Home.class);
+                                            startActivity(irPara);
+                                        }
+                                    });
+                                    alerta = builder.create();
+                                    alerta.show();
+                                } else {
+                                    dao.inserir(usuario);
+                                }
+
+                                dao.close();
                             }
+                        });
 
-                            dao.close();
-                        }
-                    });
-
-                    builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            irPara = new Intent(Login.this, Home.class);
-                            startActivity(irPara);
-                        }
-                    });
-                    alerta = builder.create();
-                    alerta.show();
+                        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                irPara = new Intent(Login.this, Home.class);
+                                startActivity(irPara);
+                            }
+                        });
+                        alerta = builder.create();
+                        alerta.show();
+                    }
                 }
             }
         });
