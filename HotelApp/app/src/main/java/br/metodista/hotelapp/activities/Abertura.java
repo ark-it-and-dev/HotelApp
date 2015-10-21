@@ -23,32 +23,13 @@ public class Abertura extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_abertura);
-
-//        btnReservar = (Button) findViewById(R.id.btnRealizarReserva);
-        btnLogin = (Button) findViewById(R.id.btnLogin);
-
-//        btnReservar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                irPara = new Intent(Abertura.this, ReservarQuarto.class);
-//                startActivity(irPara);
-//            }
-//        });
-
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                irPara = new Intent(Abertura.this, Login.class);
-                startActivity(irPara);
-            }
-        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
 //        getMenuInflater().inflate(R.menu.menu_abertura, menu);
-        getMenuInflater().inflate(R.menu.menu_default, menu);
+        getMenuInflater().inflate(R.menu.menu_abertura, menu);
         return true;
     }
 
@@ -61,14 +42,15 @@ public class Abertura extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         switch (id) {
+            case R.id.action_login:
+                irPara = new Intent(this, Login.class);
+                startActivity(irPara);
+                break;
+
             case R.id.action_contactar:
                 irPara = new Intent(this, Contato.class);
                 startActivity(irPara);
                 break;
-
-//            case R.id.action_localizacao:
-//                Toast.makeText(this, "Função em desenvolvimento", Toast.LENGTH_SHORT).show();
-//                break;
         }
 
         return super.onOptionsItemSelected(item);
