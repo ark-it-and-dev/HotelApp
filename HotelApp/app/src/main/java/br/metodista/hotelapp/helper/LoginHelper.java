@@ -30,4 +30,9 @@ public class LoginHelper {
 
         return usuario;
     }
+    
+    public void setUsuarioDoLogin(String login, String senha) {
+        txtLogin.setText(login);
+        txtSenha.getText(senha);
+    }
 }
