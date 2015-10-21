@@ -11,14 +11,12 @@ import br.metodista.hotelapp.model.Usuario;
  */
 public class LoginHelper {
 
-    private Usuario usuario;
+    private Usuario usuario = Usuario.getInstance();
 
     private EditText txtLogin;
     private EditText txtSenha;
 
     public LoginHelper(Activity activity) {
-        usuario = new Usuario();
-
         txtLogin = (EditText) activity.findViewById(R.id.txtLogin);
         txtSenha = (EditText) activity.findViewById(R.id.txtSenha);
     }

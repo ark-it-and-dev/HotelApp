@@ -13,6 +13,8 @@ import br.metodista.hotelapp.model.Usuario;
  */
 public class UsuarioDAO extends SQLiteOpenHelper {
 
+    private Usuario usuario = Usuario.getInstance();
+
     private static final String DATABASE = "NomeDoBanco";
     private static final String TABELA = "NomeDaTabela";
     private static final int VERSAO = 1;
@@ -24,8 +26,7 @@ public class UsuarioDAO extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql =
-                "CREATE " + TABELA + " (" +
-                        "id INTEGER PRYMARY KEY, " +
+                "CREATE TABLE " + TABELA + " (" +
                         "login TEXT UNIQUE NOT NULL, " +
                         "senha TEXT UNIQUE NOT NULL" +
                         ");";
@@ -39,21 +40,45 @@ public class UsuarioDAO extends SQLiteOpenHelper {
     }
 
     public void inserir(Usuario usuario) {
-        ContentValues cv = new ContentValues();
+        if(buscar() == null) {
+            ContentValues cv = new ContentValues();
 
-        cv.put("login", usuario.getLogin());
-        cv.put("senha", usuario.getSenha());
+            cv.put("login", usuario.getLogin());
+            cv.put("senha", usuario.getSenha());
 
-        getWritableDatabase().insert(TABELA, null, cv);
+            getWritableDatabase().insert(TABELA, null, cv);
+        } else {
+            SQLiteDatabase db = this.getWritableDatabase();
+            db.execSQL("DROP TABLE IF EXISTS " + TABELA);
+
+            onCreate(db);
+
+            ContentValues cv = new ContentValues();
+
+            cv.put("login", usuario.getLogin());
+            cv.put("senha", usuario.getSenha());
+
+            getWritableDatabase().insert(TABELA, null, cv);
+        }
+    }
+
+    public boolean usuarioNaTabela() {
+        if(buscar() == null) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public Usuario buscar() {
         String sql = "SELECT * FROM " + TABELA + " ;";
         Cursor cursor = getReadableDatabase().rawQuery(sql, null);
 
-        Usuario usuario = new Usuario();
-        usuario.setLogin(cursor.getString(cursor.getColumnIndex("login")));
-        usuario.setSenha(cursor.getString(cursor.getColumnIndex("senha")));
+        Usuario usuario = Usuario.getInstance();
+        while (cursor.moveToNext()) {
+            usuario.setLogin(cursor.getString(cursor.getColumnIndex("login")));
+            usuario.setSenha(cursor.getString(cursor.getColumnIndex("senha")));
+        }
 
         return usuario;
     }
@@ -63,5 +88,4 @@ public class UsuarioDAO extends SQLiteOpenHelper {
 
         db.execSQL(sql);
     }
-
 }

@@ -1,9 +1,21 @@
 package br.metodista.hotelapp.model;
 
 public class Usuario {
+    private static Usuario usuario;
+
     private Long id;
     private String login;
     private String senha;
+
+    private Usuario() {}
+
+    public static Usuario getInstance() {
+        if(usuario == null) {
+            return new Usuario();
+        } else {
+            return usuario;
+        }
+    }
 
     public Long getId() {
         return id;
@@ -31,6 +43,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return getLogin();
+        return login;
     }
 }
