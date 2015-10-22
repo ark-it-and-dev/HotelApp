@@ -33,6 +33,6 @@ public class LoginHelper {
     
     public void setUsuarioDoLogin(String login, String senha) {
         txtLogin.setText(login);
-        txtSenha.getText(senha);
+        txtSenha.setText(senha);
     }
 }
