@@ -16,6 +16,10 @@ public class Usuario {
         }
     }
 
+    public static void encerrarSessao() {
+        usuario = null;
+    }
+
     public String getLogin() {
         return login;
     }
