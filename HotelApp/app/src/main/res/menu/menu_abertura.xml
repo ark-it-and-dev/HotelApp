@@ -4,11 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="@string/action_localizacao"
-        android:id="@+id/action_localizacao"
-        android:icon="@drawable/icone_localizacao"
+        android:title="@string/action_login"
+        android:id="@+id/action_login"
         android:orderInCategory="100"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_contactar"
