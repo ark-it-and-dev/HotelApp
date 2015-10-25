@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        new CarregarUsuarios().execute();
+//        new CarregarUsuarios().execute();
 
         helper = new LoginHelper(this);
 
@@ -69,11 +69,11 @@ public class Login extends AppCompatActivity {
                     alerta.show();
                 } else {
                     if (helper.getUsuarioDoLogin().getLogin().equals(usuario.getLogin()) && helper.getUsuarioDoLogin().getSenha().equals(usuario.getSenha())) {
-                        irPara = new Intent(Login.this, Home.class);
+                        irPara = new Intent(Login.this, Servicos.class);
                         startActivity(irPara);
                     } else {
-                        for (Usuario usuarioAux : listaUsuarios) {
-                            if(helper.getUsuarioDoLogin().getLogin().equals(usuarioAux.getLogin()) && helper.getUsuarioDoLogin().getSenha().equals(usuarioAux.getSenha())) {
+//                        for (Usuario usuarioAux : listaUsuarios) {
+//                            if(helper.getUsuarioDoLogin().getLogin().equals(usuarioAux.getLogin()) && helper.getUsuarioDoLogin().getSenha().equals(usuarioAux.getSenha())) {
                                 builder.setTitle("");
                                 builder.setMessage("Deseja manter os dados para conexão automática?");
 
@@ -89,7 +89,7 @@ public class Login extends AppCompatActivity {
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     dao.inserir(usuario);
 
-                                                    irPara = new Intent(Login.this, Home.class);
+                                                    irPara = new Intent(Login.this, Servicos.class);
                                                     startActivity(irPara);
                                                 }
                                             });
@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity {
                                             builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
-                                                    irPara = new Intent(Login.this, Home.class);
+                                                    irPara = new Intent(Login.this, Servicos.class);
                                                     startActivity(irPara);
                                                 }
                                             });
@@ -114,14 +114,14 @@ public class Login extends AppCompatActivity {
                                 builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        irPara = new Intent(Login.this, Home.class);
+                                        irPara = new Intent(Login.this, Servicos.class);
                                         startActivity(irPara);
                                     }
                                 });
                                 alerta = builder.create();
                                 alerta.show();
-                            }
-                        }
+//                            }
+//                        }
                     }
                 }
             }
