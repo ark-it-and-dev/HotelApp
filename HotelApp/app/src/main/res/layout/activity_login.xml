@@ -14,7 +14,7 @@
 
     <TextView
         android:text="@string/Login_txtLogin"
-        android:textSize="@dimen/login_contato_tamanho_texto_textview"
+        android:textSize="@dimen/tamanho_texto_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="150dp"
@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Login_txtSenha"
-        android:textSize="@dimen/login_contato_tamanho_texto_textview"
+        android:textSize="@dimen/tamanho_texto_textview"
         android:layout_marginTop="20dp"
         android:textColor="@android:color/white"/>
 

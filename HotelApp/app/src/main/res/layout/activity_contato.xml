@@ -10,7 +10,7 @@
 
     <TextView
         android:text="@string/Contato_txtEmail"
-        android:textSize="@dimen/login_contato_tamanho_texto_textview"
+        android:textSize="@dimen/tamanho_texto_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"/>
@@ -24,7 +24,7 @@
 
     <TextView
         android:text="@string/Contato_txtMensagem"
-        android:textSize="@dimen/login_contato_tamanho_texto_textview"
+        android:textSize="@dimen/tamanho_texto_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
@@ -42,7 +42,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="30dp"
         android:text="@string/Contato_btnEnviar"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:textSize="@dimen/tamanho_texto_textview"/>
 
     <TextView
         android:layout_width="match_parent"
