@@ -10,7 +10,6 @@ import br.metodista.hotelapp.model.Usuario;
  * Created by Gustavo Assalin on 04/09/2015.
  */
 public class LoginHelper {
-
     private Usuario usuario = Usuario.getInstance();
 
     private EditText txtLogin;

@@ -4,7 +4,8 @@
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -31,48 +32,7 @@
             android:name=".activities.Contato"
             android:label="@string/title_activity_contato" >
         </activity>
-        <!-- <activity -->
-        <!-- android:name=".activities.Home" -->
-        <!-- android:label="@string/title_activity_home" > -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name=".activities.Servicos" -->
-        <!-- android:label="@string/title_activity_servivos" -->
-        <!-- android:parentActivityName=".activities.Home" > -->
 
-
-        <!-- &lt;!&ndash; -->
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value="br.metodista.hotelapp.activities.Home" /> -->
-        <!-- &ndash;&gt; -->
-
-
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name=".activities.Carrinho" -->
-        <!-- android:label="@string/title_activity_carrinho" -->
-        <!-- android:parentActivityName=".activities.Servicos" > -->
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value="br.metodista.hotelapp.activities.Home" /> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name=".activities.Financeiro" -->
-        <!-- android:label="@string/title_activity_financeiro" -->
-        <!-- android:parentActivityName=".activities.Home" > -->
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value="br.metodista.hotelapp.activities.Home" /> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name=".activities.Checkout" -->
-        <!-- android:label="@string/title_activity_checkout" -->
-        <!-- android:parentActivityName=".activities.Home" > -->
-        <!-- <meta-data -->
-        <!-- android:name="android.support.PARENT_ACTIVITY" -->
-        <!-- android:value="br.metodista.hotelapp.activities.Home" /> -->
-        <!-- </activity> -->
     </application>
 
 </manifest>

@@ -12,6 +12,6 @@
          https://developer.android.com/design/patterns/navigation-drawer.html -->
     <dimen name="navigation_drawer_width">300dp</dimen>
 
-    <dimen name="abertura_login_tamanho_texto_botao">17dp</dimen>
-    <dimen name="login_contato_tamanho_texto_textview">17dp</dimen>
+    <dimen name="abertura_login_tamanho_texto_botao">20dp</dimen>
+    <dimen name="tamanho_texto_textview">17dp</dimen>
 </resources>

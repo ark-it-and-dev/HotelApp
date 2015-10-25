@@ -29,20 +29,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- Tela Home -->
-    <string name="home_texto_botao_pacotes">Pacotes</string>
-    <string name="home_texto_botao_hotel">Sobre</string>
-    <string name="home_texto_botao_promocoes">Promoções</string>
-    <string name="home_texto_botao_entretenimento">Guia Entretenimento</string>
-    <string name="home_texto_botao_locomocao">Locomoção</string>
-    <string name="home_texto_botao_mapa">Mapa</string>
-
-    <string name="home_botao_financeiro">Financeiro</string>
-    <string name="home_botao_servicos">Serviços</string>
-    <string name="home_botao_checkout">Checkout</string>
-    <string name="home_botao_sair">Sair</string>
-    <!-- Tela Home -->
-
     <!-- Tela Financeiro -->
     <string name="title_activity_financeiro">Financeiro</string>
 
@@ -68,12 +54,6 @@
     <string name="action_contactar">Entrar em Contato</string>
     <string name="action_localizacao">Localização</string>
     <!-- Menu Default -->
-
-    <!-- Menu Home -->
-    <string name="action_financeiro">Financeiro</string>
-    <string name="action_checkout">Checkout</string>
-    <string name="action_sair">Sair</string>
-    <!-- Menu Home -->
 
     <!-- Menu Contactar -->
     <string name="action_ligar">Ligar</string>
