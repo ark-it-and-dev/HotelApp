@@ -168,6 +168,10 @@
     <string name="btnAddPedido">ADD</string>
     <string name="title_activity_servivos">Servicos</string>
     <string name="title_activity_checkout">Checkout</string>
+
+    <string name="action_financeiro">Financeiro</string>
+    <string name="action_checkout">Checkout</string>
+    <string name="action_sair">Sair</string>
     <!-- Tela Servico -->
 
     <!-- Tela Checkout -->
