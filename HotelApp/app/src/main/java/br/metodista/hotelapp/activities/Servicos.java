@@ -1,9 +1,9 @@
 package br.metodista.hotelapp.activities;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -12,156 +12,31 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.OnChildClickListener;
-import android.widget.ExpandableListView.OnGroupClickListener;
-import android.widget.ExpandableListView.OnGroupCollapseListener;
-import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import br.metodista.hotelapp.R;
-import br.metodista.hotelapp.adapter.ExpandableListAdapter;
 import br.metodista.hotelapp.model.Produto;
-import br.metodista.hotelapp.model.Usuario;
 import br.metodista.hotelapp.webservice.ProdutoService;
 
 public class Servicos extends AppCompatActivity {
     //URL to get JSON Array
-
     protected ProdutoService service = new ProdutoService();
-    protected List<Produto> listaProdutos;
-
-    private ExpandableListAdapter adapter;
-    private ExpandableListView expListView;
-    private List<String> listGroup;
-    private HashMap<String, List<String>> listChild;
 
     private Intent irPara;
-
-    private void carregarDados() {
-//        new CarregarProdutos().execute();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_servivos);
 
-        // get the listview
-        expListView = (ExpandableListView) findViewById(R.id.expListServicos);
-
-        // preparing list data
-        prepareListData();
-
-        adapter = new ExpandableListAdapter(this, listGroup, listChild);
-
-        // setting list adapter
-        expListView.setAdapter(adapter);
-
-        // Listview Group click listener
-        expListView.setOnGroupClickListener(new OnGroupClickListener() {
-
-            @Override
-            public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-                // Toast.makeText(getApplicationContext(),
-                // "Group Clicked " + listGroup.get(groupPosition),
-                // Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
-
-        // Listview Group expanded listener
-        expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
-
-            @Override
-            public void onGroupExpand(int groupPosition) {
-//                Toast.makeText(getApplicationContext(),
-//                        listGroup.get(groupPosition) + " Expanded",
-//                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Listview Group collasped listener
-        expListView.setOnGroupCollapseListener(new OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-//                Toast.makeText(getApplicationContext(),
-//                        listGroup.get(groupPosition) + " Collapsed",
-//                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        // Listview on child_servicos click listener
-        expListView.setOnChildClickListener(new OnChildClickListener() {
-
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
-                // TODO Auto-generated method stub
-//                Toast.makeText(
-//                        getApplicationContext(),
-//                        listGroup.get(groupPosition) + " : " + listChild.get(listGroup.get(groupPosition)).get(childPosition),
-//                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });
+        new CarregarProdutos(Servicos.this).execute();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-        carregarDados();
-    }
-
-    /*
-     * Preparing the list data
-    */
-    private void prepareListData() {
-        listGroup = new ArrayList<String>();
-        listChild = new HashMap<String, List<String>>();
-
-        List<String> listChildPratos = new ArrayList<String>();
-        List<String> listChildBebidas = new ArrayList<String>();
-
-        for(Produto produto : listaProdutos) {
-            switch (produto.getCategoria().toString()) {
-                case "PRATO":
-                    listChildPratos.add(produto.getNome() + "\n R$" + produto.getPreco());
-                    break;
-
-                case "BEBIDA":
-                    listChildBebidas.add(produto.getNome() + "\n R$" + produto.getPreco());
-                    break;
-            }
-        }
-
-        listChild.put(listGroup.get(0), listChildPratos);
-        listChild.put(listGroup.get(1), listChildBebidas);
-    }
-
-    private void createListGroup(String grupo) {
-        listGroup = new ArrayList<String>();
-
-        if(grupo != null) {
-            listGroup.add(grupo);
-        }
-    }
-
-    private void createListChild(String child, String tituloGrupo) {
-        listChild = new HashMap<String, List<String>>();
-
-        List<String> listChildren;
-
-        if(child != null) {
-            listChildren = new ArrayList<String>();
-
-            listChildren.add(child);
-
-            listChild.put(listGroup.get(listGroup.indexOf(tituloGrupo)), listChildren);
-        }
     }
 
     @Override
@@ -207,7 +82,7 @@ public class Servicos extends AppCompatActivity {
                 builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Usuario.encerrarSessao();
+//                        Usuario.encerrarSessao();
 
                         onDestroy();
 
@@ -217,7 +92,8 @@ public class Servicos extends AppCompatActivity {
                 });
                 builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {}
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
                 });
                 AlertDialog alerta = builder.create();
                 alerta.show();
@@ -231,11 +107,21 @@ public class Servicos extends AppCompatActivity {
 
         private ProgressDialog progressDialog;
 
+        private List<Produto> listaBebidas = new ArrayList<>();
+        private List<Produto> listaPratos = new ArrayList<>();
+
+        private Activity activity;
+
+        public CarregarProdutos(Activity activity) {
+            this.activity = activity;
+        }
+
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
 
             progressDialog = new ProgressDialog(Servicos.this);
+            progressDialog.setMessage("Buscando...");
             progressDialog.show();
         }
 
@@ -248,7 +134,72 @@ public class Servicos extends AppCompatActivity {
         protected void onPostExecute(List<Produto> produtos) {
             super.onPostExecute(produtos);
 
-            listaProdutos = produtos;
+            for (Produto produto : produtos) {
+                switch (produto.getCategoria()) {
+                    case BEBIDA:
+                        listaBebidas.add(produto);
+                        break;
+
+                    case PRATO:
+                        listaPratos.add(produto);
+                        break;
+                }
+            }
+
+            ScrollView scroll = new ScrollView(activity);
+
+            LinearLayout layout = new LinearLayout(activity);
+            layout.setOrientation(LinearLayout.VERTICAL);
+
+            TextView textoListaBebidas = new TextView(activity);
+            textoListaBebidas.setText("Bebidas Disponiveis:");
+            textoListaBebidas.setTextSize(30);
+
+            layout.addView(textoListaBebidas);
+
+            for (Produto produto : listaBebidas) {
+                TextView nome = new TextView(activity);
+                nome.setText(produto.getNome());
+                nome.setTextSize(17);
+
+                TextView preco = new TextView(activity);
+                preco.setText(String.valueOf(produto.getPreco()));
+                preco.setTextSize(15);
+
+                TextView separador = new TextView(activity);
+                separador.setText("___________________________________________________________");
+
+                layout.addView(nome);
+                layout.addView(preco);
+                layout.addView(separador);
+            }
+
+            TextView textoListaBebidas2 = new TextView(activity);
+            textoListaBebidas2.setText("Pratos Disponiveis:");
+            textoListaBebidas2.setTextSize(30);
+
+            layout.addView(textoListaBebidas2);
+
+            for (Produto produto : listaPratos) {
+                TextView nome = new TextView(activity);
+                nome.setText(produto.getNome());
+                nome.setTextSize(17);
+
+                TextView preco = new TextView(activity);
+                preco.setText(String.valueOf(produto.getPreco()));
+                preco.setTextSize(15);
+
+                TextView separador = new TextView(activity);
+                separador.setText("___________________________________________________________");
+
+                layout.addView(nome);
+                layout.addView(preco);
+                layout.addView(separador);
+            }
+
+            scroll.addView(layout);
+
+            activity.setContentView(scroll);
 
             progressDialog.dismiss();
         }
