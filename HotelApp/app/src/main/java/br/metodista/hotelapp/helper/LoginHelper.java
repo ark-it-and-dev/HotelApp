@@ -10,7 +10,7 @@ import br.metodista.hotelapp.model.Usuario;
  * Created by Gustavo Assalin on 04/09/2015.
  */
 public class LoginHelper {
-    private Usuario usuario = Usuario.getInstance();
+    private Usuario usuario = new Usuario();
 
     private EditText txtLogin;
     private EditText txtSenha;
@@ -30,8 +30,11 @@ public class LoginHelper {
         return usuario;
     }
     
-    public void setUsuarioDoLogin(String login, String senha) {
-        txtLogin.setText(login);
-        txtSenha.setText(senha);
+    public boolean validaCampos() {
+        if(txtLogin.getText().toString().equals("") || txtSenha.getText().toString().equals("")) {
+            return false;
+        }
+
+        return true;
     }
 }
