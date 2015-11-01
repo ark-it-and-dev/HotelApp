@@ -18,15 +18,22 @@ import br.metodista.hotelapp.model.Usuario;
  */
 public class UsuarioService {
 
-    private static final String URL = "https://openws.herokuapp.com/hotelapp-usuarios";
-    private static final String API_KEY = "b4111c92d8a0f3d61f3cfd87e9a4eb75";
+    private static final String URL = "https://openws.herokuapp.com/hotelappusuarios";
+    private static final String API_KEY = "?apiKey=b4111c92d8a0f3d61f3cfd87e9a4eb75";
+
+    private URL url;
+
+    private void setUrl() throws Exception {
+        url = new URL("https://openws.herokuapp.com/hotelapp-usuarios-oficiais?apiKey=b4111c92d8a0f3d61f3cfd87e9a4eb75");
+    }
 
     public List<Usuario> getAll() {
         List<Usuario> usuarios = new ArrayList<>();
         HttpURLConnection urlConnection = null;
 
         try {
-            java.net.URL url = new URL(URL + API_KEY);
+            setUrl();
+
             urlConnection = (HttpURLConnection) url.openConnection();
 
             InputStream in =  new BufferedInputStream(urlConnection.getInputStream());

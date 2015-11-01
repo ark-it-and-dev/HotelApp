@@ -17,15 +17,15 @@ import br.metodista.hotelapp.model.Produto;
  * Created by Gustavo Assalin on 13/10/2015.
  */
 public class ProdutoService {
-    private static final String URL = "https://openws.herokuapp.com/hotelapp-produtos";
-    private static final String API_KEY = "b4111c92d8a0f3d61f3cfd87e9a4eb75";
+    private URL url;
 
     public List<Produto> getAll() {
         List<Produto> produtos = new ArrayList<>();
         HttpURLConnection urlConnection = null;
 
         try {
-            URL url = new URL(URL + API_KEY);
+            url = new URL("https://openws.herokuapp.com/hotelapp-servicos-teste?apiKey=b4111c92d8a0f3d61f3cfd87e9a4eb75");
+
             urlConnection = (HttpURLConnection) url.openConnection();
 
             InputStream in =  new BufferedInputStream(urlConnection.getInputStream());
