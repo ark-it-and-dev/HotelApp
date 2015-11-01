@@ -12,15 +12,24 @@ import br.metodista.hotelapp.model.Usuario;
  * Created by Gustavo Assalin on 04/09/2015.
  */
 public class UsuarioDAO extends SQLiteOpenHelper {
+    private static UsuarioDAO usuarioDAO;
 
-    private Usuario usuario = Usuario.getInstance();
+    private Usuario usuario = new Usuario();
 
     private static final String DATABASE = "NomeDoBanco";
     private static final String TABELA = "NomeDaTabela";
     private static final int VERSAO = 1;
 
-    public UsuarioDAO(Context context) {
+    private UsuarioDAO(Context context) {
         super(context, DATABASE, null, VERSAO);
+    }
+
+    public static UsuarioDAO getInstance(Context context) {
+        if(usuarioDAO == null) {
+            return new UsuarioDAO(context);
+        } else {
+            return usuarioDAO;
+        }
     }
 
     @Override
@@ -74,7 +83,7 @@ public class UsuarioDAO extends SQLiteOpenHelper {
         String sql = "SELECT * FROM " + TABELA + " ;";
         Cursor cursor = getReadableDatabase().rawQuery(sql, null);
 
-        Usuario usuario = Usuario.getInstance();
+        Usuario usuario = new Usuario();
         while (cursor.moveToNext()) {
             usuario.setLogin(cursor.getString(cursor.getColumnIndex("login")));
             usuario.setSenha(cursor.getString(cursor.getColumnIndex("senha")));
