@@ -27,37 +27,39 @@
             android:textColor="@android:color/holo_orange_light"
             android:textSize="@dimen/tamanho_texto_textview"/>
 
-        <LinearLayout
+
+
+        <TextView
+            android:text="@string/sobre1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="vertical">
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-            <TextView
-                android:text="@string/sobre2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-            <TextView
-                android:text="@string/sobre3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-            <TextView
-                android:text="@string/sobre4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-        </LinearLayout>
+        <TextView
+            android:text="@string/sobre2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
+
+        <TextView
+            android:text="@string/sobre3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
+
+        <TextView
+            android:text="@string/sobre4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
         <TextView
             android:text="______________________________________________________"
@@ -72,90 +74,94 @@
             android:textColor="@android:color/holo_orange_light"
             android:textSize="@dimen/tamanho_texto_textview"/>
 
-        <LinearLayout
+
+        <TextView
+            android:text="@string/sobre_servicos1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="vertical">
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
+        <TextView
+            android:text="@string/sobre_servicos10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
-            <TextView
-                android:text="@string/sobre_servicos10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-
-            <TextView
-                android:text="@string/sobre_servicos11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-
-        </LinearLayout>
+        <TextView
+            android:text="@string/sobre_servicos11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
         <TextView
             android:text="______________________________________________________"
@@ -170,20 +176,14 @@
             android:textColor="@android:color/holo_orange_light"
             android:textSize="@dimen/tamanho_texto_textview"/>
 
-        <LinearLayout
+
+        <TextView
+            android:text="@string/sobre_gastronomia1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="vertical">
-
-            <TextView
-                android:text="@string/sobre_gastronomia1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-
-        </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
         <TextView
             android:text="______________________________________________________"
@@ -198,20 +198,13 @@
             android:textColor="@android:color/holo_orange_light"
             android:textSize="@dimen/tamanho_texto_textview"/>
 
-        <LinearLayout
+        <TextView
+            android:text="@string/sobre_localizacao1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="vertical">
-
-            <TextView
-                android:text="@string/sobre_localizacao1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/tamanho_texto_textview"/>
-
-        </LinearLayout>
+            android:layout_marginTop="10dp"
+            android:textSize="@dimen/tamanho_texto_textview"
+            android:textColor="@android:color/holo_orange_light"/>
 
     </LinearLayout>
 
