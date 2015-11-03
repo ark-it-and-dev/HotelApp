@@ -7,8 +7,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import br.metodista.hotelapp.R;
+import br.metodista.hotelapp.dao.UsuarioDAO;
+import br.metodista.hotelapp.model.UsuarioLogado;
 
 public class Abertura extends AppCompatActivity {
+
+    private UsuarioDAO dao = UsuarioDAO.getInstance(Abertura.this);
 
     private Intent irPara;
 
@@ -36,8 +40,13 @@ public class Abertura extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         switch (id) {
             case R.id.action_login:
-                irPara = new Intent(this, Login.class);
-                startActivity(irPara);
+                if(UsuarioLogado.getInstance().getLogin() == null || UsuarioLogado.getInstance().getSenha() == null || UsuarioLogado.getInstance().getLogin().equals("") || UsuarioLogado.getInstance().getSenha().equals("")) {
+                    irPara = new Intent(this, Login.class);
+                    startActivity(irPara);
+                } else {
+                    irPara = new Intent(this, Servicos.class);
+                    startActivity(irPara);
+                }
                 break;
 
             case R.id.action_contactar:
@@ -48,5 +57,4 @@ public class Abertura extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
 }
