@@ -17,10 +17,6 @@ import br.metodista.hotelapp.model.Usuario;
  * Created by Gustavo Assalin on 22/10/2015.
  */
 public class UsuarioService {
-
-    private static final String URL = "https://openws.herokuapp.com/hotelappusuarios";
-    private static final String API_KEY = "?apiKey=b4111c92d8a0f3d61f3cfd87e9a4eb75";
-
     private URL url;
 
     private void setUrl() throws Exception {
