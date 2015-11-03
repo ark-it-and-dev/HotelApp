@@ -15,15 +15,19 @@ import java.util.List;
 import br.metodista.hotelapp.R;
 import br.metodista.hotelapp.dao.UsuarioDAO;
 import br.metodista.hotelapp.helper.LoginHelper;
+import br.metodista.hotelapp.iterator.UsuarioIterator;
 import br.metodista.hotelapp.model.Usuario;
+import br.metodista.hotelapp.model.UsuarioLogado;
 import br.metodista.hotelapp.webservice.UsuarioService;
 
 public class Login extends AppCompatActivity {
 
     private UsuarioService service = new UsuarioService();
-    protected List<Usuario> listaUsuarios;
+//    protected List<Usuario> listaUsuarios;
 
-    private UsuarioDAO dao = new UsuarioDAO(Login.this);
+    private UsuarioIterator usuIterator;
+
+    private UsuarioDAO dao = UsuarioDAO.getInstance(Login.this);
     private AlertDialog.Builder builder;
     private AlertDialog alerta;
 
@@ -39,14 +43,25 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-//        new CarregarUsuarios().execute();
-
         helper = new LoginHelper(this);
 
-        usuario = dao.buscar();
-        if(usuario != null) {
-            helper.setUsuarioDoLogin(usuario.getLogin(), usuario.getSenha());
-        }
+        new CarregarUsuarios().execute();
+
+
+//        String msg = "null";
+//        if(!UsuarioLogado.getInstance().getLogin().equals("") || UsuarioLogado.getInstance().getLogin() != null) {
+//            msg = "nulo";
+//        }
+//        builder.setMessage(msg);
+//
+//        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//            }
+//        });
+//
+//        alerta = builder.create();
+//        alerta.show();
 
         builder = new AlertDialog.Builder(Login.this);
 
@@ -55,7 +70,7 @@ public class Login extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (usuario.getLogin().equals("") || usuario.getSenha().equals("")) {
+                if (!helper.validaCampos()) {
                     builder.setTitle("");
                     builder.setMessage("Está faltando informação!");
 
@@ -68,60 +83,59 @@ public class Login extends AppCompatActivity {
                     alerta = builder.create();
                     alerta.show();
                 } else {
-                    if (helper.getUsuarioDoLogin().getLogin().equals(usuario.getLogin()) && helper.getUsuarioDoLogin().getSenha().equals(usuario.getSenha())) {
-                        irPara = new Intent(Login.this, Servicos.class);
-                        startActivity(irPara);
-                    } else {
-//                        for (Usuario usuarioAux : listaUsuarios) {
-//                            if(helper.getUsuarioDoLogin().getLogin().equals(usuarioAux.getLogin()) && helper.getUsuarioDoLogin().getSenha().equals(usuarioAux.getSenha())) {
-                                builder.setTitle("");
-                                builder.setMessage("Deseja manter os dados para conexão automática?");
+                    usuario = helper.getUsuarioDoLogin();
+                    boolean alertaMsg = true;
 
-                                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        if (dao.usuarioNaTabela()) {
-                                            builder.setTitle("");
-                                            builder.setMessage("Continuando esta ação, login automático do antigo usuário não será mais permitido.\nDeseja continuar?");
+                    while(usuIterator.hasNext()) {
+                        if (usuario.getLogin().equals(usuIterator.atual().getLogin()) && usuario.getSenha().equals(usuIterator.atual().getSenha())) {
+                            builder.setMessage("Deseja manter os dados para conexão automática?");
 
-                                            builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                    dao.inserir(usuario);
+                            builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dao.inserir(usuario);
 
-                                                    irPara = new Intent(Login.this, Servicos.class);
-                                                    startActivity(irPara);
-                                                }
-                                            });
+                                    irPara = new Intent(Login.this, Servicos.class);
+                                    startActivity(irPara);
+                                }
+                            });
 
-                                            builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                                                @Override
-                                                public void onClick(DialogInterface dialog, int which) {
-                                                    irPara = new Intent(Login.this, Servicos.class);
-                                                    startActivity(irPara);
-                                                }
-                                            });
-                                            alerta = builder.create();
-                                            alerta.show();
-                                        } else {
-                                            dao.inserir(usuario);
-                                        }
+                            builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    irPara = new Intent(Login.this, Servicos.class);
+                                    startActivity(irPara);
+                                }
+                            });
 
-                                        dao.close();
-                                    }
-                                });
+                            UsuarioLogado.getInstance().setLogin(usuario.getLogin());
+                            UsuarioLogado.getInstance().setSenha(usuario.getSenha());
+                            UsuarioLogado.getInstance().setListaProduto(usuario.getListaProduto());
 
-                                builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        irPara = new Intent(Login.this, Servicos.class);
-                                        startActivity(irPara);
-                                    }
-                                });
-                                alerta = builder.create();
-                                alerta.show();
-//                            }
-//                        }
+                            alerta = builder.create();
+                            alerta.show();
+
+                            alertaMsg = false;
+
+                            return;
+                        }
+
+                        usuIterator.next();
+                    }
+
+                    if(alertaMsg) {
+                        builder.setTitle("");
+                        builder.setMessage("Dados Invalidos");
+
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+
+                        alerta = builder.create();
+                        alerta.show();
                     }
                 }
             }
@@ -149,7 +163,7 @@ public class Login extends AppCompatActivity {
         protected void onPostExecute(List<Usuario> usuarios) {
             super.onPostExecute(usuarios);
 
-            listaUsuarios = usuarios;
+            usuIterator = new UsuarioIterator(usuarios);
 
             progressDialog.dismiss();
         }
