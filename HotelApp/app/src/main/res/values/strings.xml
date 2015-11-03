@@ -29,15 +29,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- Tela Financeiro -->
-    <string name="title_activity_financeiro">Financeiro</string>
-
-    <string name="financeiro_cabecalho">Despesas</string>
-    <string name="financeiro_texto_valor_total">Valor Total:</string>
-    <!-- Tela Financeiro -->
-
-
-
     <string name="servicos_texto_qtd_total">Quantidade Total de Itens</string>
     <string name="servicos_texto_botao">Ver Itens Adicionados</string>
     <string name="servicos_carrinho_texto_botao">Confirmar Pedido</string>
@@ -59,16 +50,12 @@
     <string name="action_ligar">Ligar</string>
     <!-- Menu Contactar -->
 
-    <!-- Menu Financeiro -->
-    <string name="action_pedido">Conferir Pedido</string>
-    <!-- Menu Financeiro -->
-
     <!-- Tela Contato -->
     <string name="Contato_txtEmail">E-mail:</string>
     <string name="Contato_txtMensagem">Mensagem:</string>
     <string name="Contato_btnEnviar">Enviar</string>
     <string name="Contato_txtLocalizacao">Localização</string>
-    <string name="Contato_txtEndereco">Rua dos Programadores</string>
+    <string name="Contato_txtEndereco">Av. Engenheiro Luiz Carlos Berrini, 500 - SP</string>
     <!-- Tela Contato -->
 
     <!-- Tela Reservar -->
@@ -106,13 +93,13 @@
     <string name="title_activity_home_sobre">Home_Sobre</string>
     <string name="sobre_titulo">Sobre</string>
     <string name="sobre1">
-    Situado no Centro Histórico de Porto Alegre, o Hotel Continental Business é uma oferta sob medida para quem busca acessibilidade, localização privilegiada para negócios e turismo, além de muito conforto.
+    Situado na cidade de São Paulo, o Royal Hotel é uma oferta sob medida para quem busca acessibilidade, localização privilegiada para negócios e turismo, além de muito conforto.
     </string>
     <string name="sobre2">
-    O hotel oferece apartamentos de acordo com suas necessidades, com andares completamente reformulados, para a melhor experiência em hospedagem na capital gaúcha.
+    O hotel oferece apartamentos de acordo com suas necessidades, com andares completamente reformulados, para a melhor experiência.
     </string>
     <string name="sobre3">
-    Inaugurado em 1999, no centro da cidade, o Hotel Continental Business se destaca pela qualidade de hospedagem e por oferecer um conjunto de serviços que tornam a estadia dos hóspedes uma experiência bastante agradável e produtiva.
+    Inaugurado em 1999, no centro da cidade, o Royal Hotel se destaca pela qualidade de hospedagem e por oferecer um conjunto de serviços que tornam a estadia dos hóspedes uma experiência bastante agradável e produtiva.
     </string>
     <string name="sobre4">
     Conta com mais de 30 anos de tradição hoteleira, inovando sempre, com o foco no compromisso de satisfazer as necessidades de seus clientes e fazer com que todos se sintam em casa.
@@ -155,12 +142,12 @@
 
     <string name="sobre_titulo_gastronomia">Gastronomia</string>
     <string name="sobre_gastronomia1">
-        O Hotel Continental Business possui Coffee-Shop, Room Service 24horas com elaboração de pratos rápidos e lanches preparados por um chefe de cozinha. A localização central do Continental Business permite ao hóspede escolher entre as diversas opções de bares e restaurantes.
+        O Royal Hotel possui Coffee-Shop, Room Service 24horas com elaboração de pratos rápidos e lanches preparados por um chefe de cozinha. A localização central do Royal Hotel permite ao hóspede escolher entre as diversas opções de bares e restaurantes.
     </string>
 
     <string name="sobre_titulo_localizacao">Localização</string>
     <string name="sobre_localizacao1">
-        Localizado no centro de São Bernardo do Campo, Rua Java, o Hotel Royals tem acesso privilegiado para turismo e negócios. É nesta região da cidade que estão concentradas as principais atividades de negócios, os centros culturais, os prédios históricos e lindas praças arborizadas.
+        Localizado na cidade de São Paulo, Rua Java, o Hotel Royals tem acesso privilegiado para turismo e negócios. É nesta região da cidade que estão concentradas as principais atividades de negócios, os centros culturais, os prédios históricos e lindas praças arborizadas.
     </string>
     <!-- Home_Sobre -->
 
@@ -173,9 +160,5 @@
     <string name="action_checkout">Checkout</string>
     <string name="action_sair">Sair</string>
     <!-- Tela Servico -->
-
-    <!-- Tela Checkout -->
-    <string name="checkout_texto_finalizar_checkout">Finalizar Checkout</string>
-    <!-- Tela Checkout -->
     
 </resources>
