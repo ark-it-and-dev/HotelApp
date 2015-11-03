@@ -18,7 +18,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import br.metodista.hotelapp.R;
+import br.metodista.hotelapp.dao.UsuarioDAO;
 import br.metodista.hotelapp.model.Produto;
+import br.metodista.hotelapp.model.UsuarioLogado;
 import br.metodista.hotelapp.webservice.ProdutoService;
 
 public class Servicos extends AppCompatActivity {
@@ -27,16 +29,14 @@ public class Servicos extends AppCompatActivity {
 
     private Intent irPara;
 
+    private AlertDialog.Builder builder;
+    private AlertDialog alerta;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         new CarregarProdutos(Servicos.this).execute();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
     }
 
     @Override
@@ -55,36 +55,21 @@ public class Servicos extends AppCompatActivity {
 
         switch (id) {
             case R.id.action_financeiro:
-                onDestroy();
-
                 irPara = new Intent(this, Financeiro.class);
                 startActivity(irPara);
                 break;
 
             case R.id.action_checkout:
-                onDestroy();
+                builder = new AlertDialog.Builder(Servicos.this);
 
-                irPara = new Intent(this, Checkout.class);
-                startActivity(irPara);
-                break;
-
-            case R.id.action_contactar:
-                onDestroy();
-
-                irPara = new Intent(this, Contato.class);
-                startActivity(irPara);
-                break;
-
-            case R.id.action_sair:
-                AlertDialog.Builder builder = new AlertDialog.Builder(Servicos.this);
-                builder.setTitle("Confirmação de Logoff");
-                builder.setMessage("Deseja realmente realizar o logoff?");
+                builder.setTitle("Confirmação de Checkout");
+                builder.setMessage("Deseja realmente encerrar sua conta?");
                 builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-//                        Usuario.encerrarSessao();
-
-                        onDestroy();
+                        if (UsuarioDAO.getInstance(Servicos.this).buscar() != null) {
+                            UsuarioDAO.getInstance(Servicos.this).deletarECriar();
+                        }
 
                         irPara = new Intent(Servicos.this, Abertura.class);
                         startActivity(irPara);
@@ -95,7 +80,39 @@ public class Servicos extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                     }
                 });
-                AlertDialog alerta = builder.create();
+                alerta = builder.create();
+                alerta.show();
+                break;
+
+            case R.id.action_contactar:
+                irPara = new Intent(this, Contato.class);
+                startActivity(irPara);
+                break;
+
+            case R.id.action_sair:
+                builder = new AlertDialog.Builder(Servicos.this);
+
+                builder.setTitle("Confirmação de Logoff");
+                builder.setMessage("Deseja realmente realizar o logoff?");
+                builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        UsuarioDAO.getInstance(Servicos.this).deletarECriar();
+
+                        UsuarioLogado.getInstance().setLogin("");
+                        UsuarioLogado.getInstance().setSenha("");
+                        UsuarioLogado.getInstance().setListaProduto(null);
+
+                        irPara = new Intent(Servicos.this, Abertura.class);
+                        startActivity(irPara);
+                    }
+                });
+                builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+                alerta = builder.create();
                 alerta.show();
                 break;
         }
@@ -163,7 +180,7 @@ public class Servicos extends AppCompatActivity {
                 nome.setTextSize(17);
 
                 TextView preco = new TextView(activity);
-                preco.setText(String.valueOf(produto.getPreco()));
+                preco.setText("R$" + String.valueOf(produto.getPreco()));
                 preco.setTextSize(15);
 
                 TextView separador = new TextView(activity);
@@ -186,7 +203,7 @@ public class Servicos extends AppCompatActivity {
                 nome.setTextSize(17);
 
                 TextView preco = new TextView(activity);
-                preco.setText(String.valueOf(produto.getPreco()));
+                preco.setText("R$" + String.valueOf(produto.getPreco()));
                 preco.setTextSize(15);
 
                 TextView separador = new TextView(activity);
