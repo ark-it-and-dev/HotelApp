@@ -14,8 +14,6 @@ import br.metodista.hotelapp.model.Usuario;
 public class UsuarioDAO extends SQLiteOpenHelper {
     private static UsuarioDAO usuarioDAO;
 
-    private Usuario usuario = new Usuario();
-
     private static final String DATABASE = "NomeDoBanco";
     private static final String TABELA = "NomeDaTabela";
     private static final int VERSAO = 1;
@@ -26,10 +24,10 @@ public class UsuarioDAO extends SQLiteOpenHelper {
 
     public static UsuarioDAO getInstance(Context context) {
         if(usuarioDAO == null) {
-            return new UsuarioDAO(context);
-        } else {
-            return usuarioDAO;
+            usuarioDAO = new UsuarioDAO(context);
         }
+
+        return usuarioDAO;
     }
 
     @Override
@@ -57,10 +55,7 @@ public class UsuarioDAO extends SQLiteOpenHelper {
 
             getWritableDatabase().insert(TABELA, null, cv);
         } else {
-            SQLiteDatabase db = this.getWritableDatabase();
-            db.execSQL("DROP TABLE IF EXISTS " + TABELA);
-
-            onCreate(db);
+            deletarECriar();
 
             ContentValues cv = new ContentValues();
 
@@ -71,12 +66,11 @@ public class UsuarioDAO extends SQLiteOpenHelper {
         }
     }
 
-    public boolean usuarioNaTabela() {
-        if(buscar() == null) {
-            return false;
-        } else {
-            return true;
-        }
+    public void deletarECriar() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.execSQL("DROP TABLE IF EXISTS " + TABELA);
+        onCreate(db);
     }
 
     public Usuario buscar() {
@@ -90,11 +84,5 @@ public class UsuarioDAO extends SQLiteOpenHelper {
         }
 
         return usuario;
-    }
-
-    public void deletar(SQLiteDatabase db) {
-        String sql = "DELETE * FROM " + TABELA + " ;";
-
-        db.execSQL(sql);
     }
 }

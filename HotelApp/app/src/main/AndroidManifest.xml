@@ -3,7 +3,6 @@
     package="br.metodista.hotelapp" >
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -32,7 +31,12 @@
             android:name=".activities.Contato"
             android:label="@string/title_activity_contato" >
         </activity>
-
+        <activity
+            android:name=".activities.Servicos"
+            android:label="@string/title_activity_servivos" >
+        </activity>
+        <activity android:name=".activities.Financeiro" >
+        </activity>
     </application>
 
 </manifest>

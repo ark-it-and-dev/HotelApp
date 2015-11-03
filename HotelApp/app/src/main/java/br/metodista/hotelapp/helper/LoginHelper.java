@@ -29,7 +29,7 @@ public class LoginHelper {
 
         return usuario;
     }
-    
+
     public boolean validaCampos() {
         if(txtLogin.getText().toString().equals("") || txtSenha.getText().toString().equals("")) {
             return false;

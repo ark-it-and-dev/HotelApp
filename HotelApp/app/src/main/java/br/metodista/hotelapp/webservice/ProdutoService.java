@@ -19,12 +19,16 @@ import br.metodista.hotelapp.model.Produto;
 public class ProdutoService {
     private URL url;
 
+    private void setUrl() throws Exception {
+        url = new URL("https://openws.herokuapp.com/hotelapp-servicos-teste?apiKey=b4111c92d8a0f3d61f3cfd87e9a4eb75");
+    }
+
     public List<Produto> getAll() {
         List<Produto> produtos = new ArrayList<>();
         HttpURLConnection urlConnection = null;
 
         try {
-            url = new URL("https://openws.herokuapp.com/hotelapp-servicos-teste?apiKey=b4111c92d8a0f3d61f3cfd87e9a4eb75");
+            setUrl();
 
             urlConnection = (HttpURLConnection) url.openConnection();
 
