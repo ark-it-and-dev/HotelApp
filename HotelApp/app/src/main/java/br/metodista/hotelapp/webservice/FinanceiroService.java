@@ -20,7 +20,7 @@ public class FinanceiroService {
     private URL url;
 
     private void setUrl() throws Exception {
-        url = new URL("https://openws.herokuapp.com/outroteste?apiKey=b4111c92d8a0f3d61f3cfd87e9a4eb75");
+        url = new URL("https://openws.herokuapp.com/usuarios?apiKey=ab8647942e1d0a115b28891b9c07a2b7");
     }
 
     public List<Usuario> getAll() {
